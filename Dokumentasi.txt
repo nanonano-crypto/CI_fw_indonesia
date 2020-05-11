@@ -1,0 +1,71 @@
+                Dokumentasi belajar codeigniter
+                *******************************
+
+sumber : 
+    - chanel youtube framework indonesia
+
+
+- framework => kerangka kerja
+
+- alasan kenapa meenggunakan framework codeigniter
+    1. ukuran file kecil
+    2. Dokumentasi jelas & lengkap
+    3. Kongigurasi simple
+    4. performa sangat cepat
+    5. open source
+
+- pra sayarat belajar codeigniter
+    1. HTML
+    2. php
+    3. oop
+    
+- alat dan bahan
+    1. xampp
+    2. folder codeigniter
+    3. text editor (vscode)
+    4. browser
+	
+- setting konfigurasi 
+	- aplication
+		- config
+			-autoload.php
+				$autoload['libraries'] = array('database', 'session', 'form_validation');
+				
+				$autoload['helper'] = array('URL', 'form' );
+				
+			- config.php
+				$config['base_url'] = array('http://localhost/codeigniter/CI_fw_indonesia/');
+				
+			- database.php
+				isi koneksi.php
+				
+			- route.php
+				$route['default_controller'] = 'isi'
+				$route['404_overide'] = 'isi link halaman tidad di temukan';
+				
+- mengenal uri segmennt dan menghilangkan index.php
+	- uri segment default 
+		localhost/codeigniter/CI_fw_indonesia/index/default_controller.php/nama class method
+
+	- keterangan
+		- localhost 		=> alamat server
+		- CI_fw_indonesia   => nama direktori
+		- index.php 		=> nama controller default CI 
+		- welcome.php 		=> nama controller(uri segmennt 1)
+		- index 			=> nama method/fungsi dalam conntroller(uri segmennt 2)
+		
+	- menghilangkan index.php
+	
+		- menambahkan file .htaccess pada folder utama 
+			isi file	
+			RewriteEngine On
+			RewriteCond %{REQUEST_FILENAME} !-f
+			RewriteCond %{REQUEST_FILENAME} !-d
+			RewriteRule ^(.*)$ index.php/$1 [L]
+		
+	
+				
+				
+		
+
+    
