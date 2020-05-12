@@ -62,6 +62,74 @@ sumber :
 			RewriteCond %{REQUEST_FILENAME} !-f
 			RewriteCond %{REQUEST_FILENAME} !-d
 			RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+	- pengenalan MVC
+		> model      -> mengambil dan menyimpan data  dari database 
+		> view 		 -> menampilkan antarmuka dari aplikasi codeigniter
+		> controller -> menangani interaksi bekerja dengan mode memilih view yg di gunakan
+
+		> user hanya berinteraksi dengan controller
+
+							********
+							* user *
+							********
+								|
+							   | |
+							    |
+							    V
+				  *		    **********         *
+			view  * < -- >	controller  < -- > * model
+				  *		    **********         *
+
+			> aturan penulisan controller
+				1. nama file sama dengan nama class
+				2. nama class harus di awali dengan huruf besar 
+				3. nama file boleh boleh di awali dengan huruf kecil
+				4. nama class tidak boleh meenggunakan spasi tanda "_" dll
+				5. tidak boleh ada nama method yg sama dalam satu class 
+
+			> aturan penulisan sama dengan controller
+
+	- koneksi database	
+		> membuat database terlebih dahulu
+		> atur configurasi 
+			- application
+				- config 
+					- autoload.php
+						- $autoload['libraries'] = array('database', 'session', 'form_validation');	
+
+						- $autoload['model'] = array('m_mhs');
+
+					- database.php	
+						$db['default'] = array(
+						'dsn'	=> '',
+						'hostname' => 'localhost',
+						'username' => 'root',
+						'password' => '',
+						'database' => 'db_mhs',
+						'dbdriver' => 'mysqli',
+		> buat file controller model dan view lihat pada codingan
+
+	* * MEMBUAT APLIKASI SIAKAD
+	- menambahkan template admin lte
+		> download  pada situs resminya
+		> extract dan copikan ke folder projek->assets
+		> copikan file index.html ke views->
+		> pecah menjadi 4 bagian
+			> header
+			> sidebar
+			> dashboard
+			> footer
+		> atur link css dan js
+
+	- membuat database 
+		> nama db : SIAKAD
+			- nama table
+				> tb_mahasiswa
+
+
+copikan ke mr nano
 		
 	
 				
