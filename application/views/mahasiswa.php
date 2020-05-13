@@ -42,6 +42,7 @@
                 <td><?php echo $mhs->nim ?></td>
                 <td><?php echo $mhs->tgl_lahir ?></td>
                 <td><?php echo $mhs->jurusan ?></td>
+                <td> <?php echo anchor('mahasiswa/detail/'. $mhs->id, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                 <td onclick="javascript:return confirm('anda yakin hapus')"><?php echo anchor('mahasiswa/hapus/'. $mhs->id, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                 <td> <?php echo anchor('mahasiswa/edit/'. $mhs->id, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
                 
@@ -62,7 +63,8 @@
             </button>
         </div>
         <div class="modal-body">
-            <form method="post" action="<?php echo base_url().'mahasiswa/tambah_aksi' ?>">
+           <?php echo form_open_multipart('mahasiswa/tambah_aksi'); ?>
+
                 <div class="form-group">
                     <label for="">Nama Mahasiswa</label><br>
                     <input type="text" name="nama" class="form-control">
@@ -76,13 +78,36 @@
                     <input type="date" name="tgl_lahir" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="">Jurusan</label><br>
-                    <input type="text" name="jurusan" class="form-control">
+                <label for="">Jurusan</label>
+                <select name="jurusan" class="form-control">
+                    <option>sistem informasi</option>
+                    <option>Teknik Informatika</option>
+                    <option>Teknik Komputer</option>
+                </select>  
+
+                <div class="form-group">
+                    <label for="">Alamat</label><br>
+                    <input type="text" name="alamat" class="form-control">
                 </div>
+                <div class="form-group">
+                    <label for="">E-mail</label><br>
+                    <input type="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">No telpon</label><br>
+                    <input type="text" name="no_telp" class="form-control">
+                </div>   
+                <div class="form-group">
+                    <label for="">Upload foto</label><br>
+                    <input type="file" name="foto" class="form-control">
+                </div>            
+               
+            </div>
                 
             <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            </form>
+
+            <?php echo form_close(); ?>
         </div>
        
        

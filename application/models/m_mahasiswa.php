@@ -27,4 +27,10 @@ class M_mahasiswa extends CI_Model {
 
     }
 
+    public function detail_data($id = null)
+    {
+      $query = $this->db->get_where('tb_mmahasiswa', array('id' => $id))->row();
+      return $query;
+    }
+
 }
