@@ -20,7 +20,30 @@
        
     </section>
     <section class="content">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i> Tambah Mahasiswa</button>
+        <?php echo $this->session->flashdata('message'); ?>
+       
+        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i> &nbsp; Tambah Mahasiswa</button>
+
+        <a href="<?php echo base_url('mahasiswa/print') ?>" class="btn btn-danger"><i class="fa fa-print"></i> &nbsp; print</a>
+
+        <div class="dropdown d-inline">
+            <button class="btn btn-warning" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-download"></i>
+            &nbsp; export
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a href="<?php echo base_url('mahasiswa/pdf') ?>" class="dropdown-item" href="#">Pdf</a>
+                <a href="<?php echo base_url('mahasiswa/excel') ?>" class="dropdown-item" href="#">Excel</a>                
+            </div>
+        </div>        
+    
+        <form class="form-inline my-2 my-lg-0 d-inline align-right">
+            <?php echo form_open('mahasiswa/search') ?>
+            <input class="form-control mr-sm-2" name="keyword" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <?php echo form_close() ?>
+        </form>
+           
+        
         <table class="table">
             <tr>
                 <th>No</th>
